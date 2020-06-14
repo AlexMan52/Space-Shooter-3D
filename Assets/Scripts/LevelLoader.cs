@@ -5,19 +5,8 @@ using System.Collections;
 public class LevelLoader : MonoBehaviour
 {
     [SerializeField] float delayBetweenLevels = 2f;
-
-    
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
     void Update()
     {
-        
         StartCoroutine(LoadFromSplashScreen());
         if (Input.GetKeyDown(KeyCode.L)) // DEBUG
         {
@@ -25,7 +14,7 @@ public class LevelLoader : MonoBehaviour
         }
     }
 
-    void LoadNextLevel()
+    void LoadNextLevel() // DEBUG
     {
         int currentLevelIndex = SceneManager.GetActiveScene().buildIndex;
         int nextLevelIndex = currentLevelIndex + 1;

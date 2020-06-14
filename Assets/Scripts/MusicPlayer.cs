@@ -5,7 +5,6 @@ using UnityEngine;
 
 public class MusicPlayer : MonoBehaviour
 {
-    // Start is called before the first frame update
     void Awake ()
     {
         int countMusicPlayers = FindObjectsOfType<MusicPlayer>().Length;
@@ -18,12 +17,4 @@ public class MusicPlayer : MonoBehaviour
             Destroy(gameObject); 
         }
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
-    
 }

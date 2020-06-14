@@ -90,7 +90,6 @@ GameObject:
   - component: {fileID: 4050943347418754}
   - component: {fileID: 33635324566914374}
   - component: {fileID: 23556679478473114}
-  - component: {fileID: 95889751416369730}
   - component: {fileID: 64400567190117106}
   - component: {fileID: 972437616}
   - component: {fileID: 972437617}
@@ -169,25 +168,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!95 &95889751416369730
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1478763926639530}
-  m_Enabled: 0
-  m_Avatar: {fileID: 9000000, guid: 4b3071d113f87f24fb37f0b071ab1c7a, type: 3}
-  m_Controller: {fileID: 9100000, guid: abe41865abe4f1f4aaa3a47171c703e3, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 1
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!64 &64400567190117106
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -233,6 +213,10 @@ MonoBehaviour:
   shipVelocity: {x: 20, y: 20, z: 0}
   xRangeToMoveOnScreen: 7
   zRangeToMoveOnScreen: 0
+  positionPitchFactor: -4
+  inputPitchFactor: -5
+  positionYawFactor: 3
+  inputRollFactor: 3
   shipBoost: {fileID: 8300000, guid: 426b24914cb2a6e4783edcec9d6cc0a4, type: 3}
 --- !u!82 &712026612
 AudioSource:

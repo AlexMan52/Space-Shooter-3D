@@ -48,19 +48,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 972437617, guid: e5078c17b52bb014882bc0363c060079, type: 3}
       propertyPath: zRangeToMoveOnScreen
-      value: 4.5
+      value: 5.18
       objectReference: {fileID: 0}
     - target: {fileID: 972437617, guid: e5078c17b52bb014882bc0363c060079, type: 3}
       propertyPath: xRangeToMoveOnScreen
-      value: 6.5
+      value: 8.21
       objectReference: {fileID: 0}
     - target: {fileID: 972437617, guid: e5078c17b52bb014882bc0363c060079, type: 3}
       propertyPath: inputPitchFactor
-      value: -10
+      value: -6
       objectReference: {fileID: 0}
     - target: {fileID: 972437617, guid: e5078c17b52bb014882bc0363c060079, type: 3}
       propertyPath: inputRollFactor
       value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 972437617, guid: e5078c17b52bb014882bc0363c060079, type: 3}
+      propertyPath: positionPitchFactor
+      value: -4
+      objectReference: {fileID: 0}
+    - target: {fileID: 972437617, guid: e5078c17b52bb014882bc0363c060079, type: 3}
+      propertyPath: positionYawFactor
+      value: 4.01
       objectReference: {fileID: 0}
     - target: {fileID: 1478763926639530, guid: e5078c17b52bb014882bc0363c060079, type: 3}
       propertyPath: m_Name
@@ -94,7 +102,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 95889751416369730, guid: e5078c17b52bb014882bc0363c060079, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: e5078c17b52bb014882bc0363c060079, type: 3}
 --- !u!4 &5588640664416219874 stripped
 Transform:

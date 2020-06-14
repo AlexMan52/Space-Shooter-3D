@@ -4,50 +4,39 @@ using System.Collections.Generic;
 
 using UnityEngine;
 
-public class Player : MonoBehaviour
+public class PlayerController : MonoBehaviour
 {
+    [Header ("General")]
     [SerializeField] Vector3 shipVelocity;
-    //[SerializeField] float shipRotationSpeed;
+    [SerializeField] AudioClip shipBoost;
 
+    [Header("Screen-based parameters")]
     [SerializeField] float xRangeToMoveOnScreen = 8f;
     [SerializeField] float zRangeToMoveOnScreen = 4.2f;
 
     [SerializeField] float positionPitchFactor = -4f;
-    [SerializeField] float inputPitchFactor = -10f;
-
     [SerializeField] float positionYawFactor = 3f;
+
+    [Header("Input-based parameters")]
+    [SerializeField] float inputPitchFactor = -10f;
     [SerializeField] float inputRollFactor = 10f;
 
-
-
     float horizontalMove, verticalMove;
-
-    [SerializeField] AudioClip shipBoost;
-
-    Rigidbody rb_ship;
-
-
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        rb_ship = GetComponent<Rigidbody>();
-    }
-
-    // Update is called once per frame
+    bool isControlEnabled = true;
     void Update()
     {
-        Movement();
-        Rotation();
-        PlaySFX();
+        if (isControlEnabled)
+        {
+            Movement();
+            Rotation();
+            PlayShipMovementSFX();
+        }
+        
     }
-
-   
 
     void Movement()
     {
         //rb_ship.angularVelocity = Vector3.zero;
-
         horizontalMove = Input.GetAxis("Horizontal");
         verticalMove = Input.GetAxis("Vertical");
 
@@ -79,7 +68,7 @@ public class Player : MonoBehaviour
         transform.localRotation = Quaternion.Euler(pitch, roll, yaw);
     }
 
-    void PlaySFX()
+    void PlayShipMovementSFX()
     {
         if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.S))
         {
@@ -93,5 +82,8 @@ public class Player : MonoBehaviour
         
     }
 
-
+    void OnPlayerDeath() //called by string reference in CollisionHandler
+    {
+        isControlEnabled = false; ;
+    }
 }

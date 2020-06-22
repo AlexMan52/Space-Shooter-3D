@@ -11,6 +11,7 @@ public class Enemy : MonoBehaviour
     [SerializeField] Transform parent;
 
     [SerializeField] int scorePerEnemy = 200;
+    [SerializeField] int hitsTillDeath = 1;
 
     // Start is called before the first frame update
     void Start()
@@ -31,6 +32,16 @@ public class Enemy : MonoBehaviour
     }
 
     private void OnParticleCollision(GameObject other)
+    {
+        hitsTillDeath--;
+        if (hitsTillDeath <= 0)
+        {
+            KillEnemy();
+        }
+        
+    }
+
+    private void KillEnemy()
     {
         GameObject deathVFXInstance = Instantiate(enemyDeathVFX, transform.position, Quaternion.identity);
         deathVFXInstance.transform.parent = parent; // вносим создаваемые объекты под 1 родительский объект в иерархии

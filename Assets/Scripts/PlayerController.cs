@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    [Header ("General")]
+    [Header("General")]
     [SerializeField] Vector3 shipVelocity;
     [SerializeField] AudioClip shipBoost;
 
@@ -23,6 +23,9 @@ public class PlayerController : MonoBehaviour
 
     [Header("Effects")]
     [SerializeField] GameObject deathFX;
+    [SerializeField] GameObject [] guns;
+    [SerializeField] AudioClip laserClip;
+
 
     float horizontalMove, verticalMove;
     bool isControlEnabled = true;
@@ -35,6 +38,7 @@ public class PlayerController : MonoBehaviour
             Rotation();
             PlayShipMovementSFX();
             deathFX.SetActive(false);
+            Shooting();
         }
     }
 
@@ -100,5 +104,24 @@ public class PlayerController : MonoBehaviour
         deathFX.SetActive(true);
         DestroyShipBodyParts();
         FindObjectOfType<LevelLoader>().ReloadScene();
+    }
+
+    void Shooting() //todo make nice sfx
+    {
+        foreach (GameObject gun in guns)
+        {
+            var bulletEmission = gun.GetComponent<ParticleSystem>().emission;
+            //AudioSource laserSound = gun.GetComponent<AudioSource>();
+            if (Input.GetButton("Fire1"))
+            {
+                bulletEmission.enabled = true;
+                //laserSound.PlayOneShot(laserClip);
+            }
+            else
+            {
+                bulletEmission.enabled = false;
+                //laserSound.Stop();
+            }
+        }
     }
 }

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
-
+using System.Runtime.CompilerServices;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
@@ -21,8 +21,12 @@ public class PlayerController : MonoBehaviour
     [SerializeField] float inputPitchFactor = -10f;
     [SerializeField] float inputRollFactor = 10f;
 
+    [Header("Effects")]
+    [SerializeField] GameObject deathFX;
+
     float horizontalMove, verticalMove;
     bool isControlEnabled = true;
+    
     void Update()
     {
         if (isControlEnabled)
@@ -30,8 +34,8 @@ public class PlayerController : MonoBehaviour
             Movement();
             Rotation();
             PlayShipMovementSFX();
+            deathFX.SetActive(false);
         }
-        
     }
 
     void Movement()
@@ -78,12 +82,23 @@ public class PlayerController : MonoBehaviour
         {
             GetComponent<AudioSource>().Stop();
         }
-       
-        
     }
 
+    private void DestroyShipBodyParts() // убрать детали корабля, чтоб после взрыва его не было видно
+    {
+        var shipDestroyables = GameObject.FindGameObjectsWithTag("ShipDestroyables");
+        for (int i = 0; i < shipDestroyables.Length; i++)
+        {
+            Destroy(shipDestroyables[i]);
+        }
+        GetComponent<MeshRenderer>().enabled = false; //выключаем рендер текстуры корабля
+        GetComponent<AudioSource>().enabled = false; //выключаем звук двигателя
+    }
     void OnPlayerDeath() //called by string reference in CollisionHandler
     {
-        isControlEnabled = false; ;
+        isControlEnabled = false;
+        deathFX.SetActive(true);
+        DestroyShipBodyParts();
+        FindObjectOfType<LevelLoader>().ReloadScene();
     }
 }

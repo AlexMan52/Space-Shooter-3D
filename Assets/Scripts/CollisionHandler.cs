@@ -19,12 +19,13 @@ public class CollisionHandler : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         print("Player hit smth");
-        PlayerDeath();
+        StartDeathSequence();
     }
 
-    void PlayerDeath()
+    void StartDeathSequence()
     {
         gameObject.SendMessage("OnPlayerDeath"); // запуск метода в другом скрипте, который применен к тому же объекту
         //FindObjectOfType<PlayerController>().OnPlayerDeath(); // запуск метода в скрипте PlayerController, но метод должен быть public!
+        FindObjectOfType<RunCamera>().ChangeLiveStatus(); 
     }
 }

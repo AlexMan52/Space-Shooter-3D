@@ -11,8 +11,9 @@ GameObject:
   - component: {fileID: 7781131316685576975}
   - component: {fileID: 7752035198094744369}
   - component: {fileID: 7763874006125175761}
+  - component: {fileID: 1638834836053751667}
   m_Layer: 0
-  m_Name: SF_Free-Fighter
+  m_Name: Enemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -26,7 +27,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7775660759998847483}
   m_LocalRotation: {x: 0.00000001244572, y: -0.82202613, z: -0.00000001796595, w: 0.5694498}
-  m_LocalPosition: {x: -47.2, y: 33.3, z: 360.1}
+  m_LocalPosition: {x: -51.6, y: 38.8, z: 339.6}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -79,3 +80,17 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!114 &1638834836053751667
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7775660759998847483}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae620ff877f27594493163bc043401df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyDeathVFX: {fileID: 4714985578167605516, guid: aa561a4fe4918da46a238512db585432,
+    type: 3}

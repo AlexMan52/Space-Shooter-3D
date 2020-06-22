@@ -10,6 +10,8 @@ public class Enemy : MonoBehaviour
     [SerializeField] GameObject enemyDeathVFX;
     [SerializeField] Transform parent;
 
+    [SerializeField] int scorePerEnemy = 200;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -33,6 +35,6 @@ public class Enemy : MonoBehaviour
         GameObject deathVFXInstance = Instantiate(enemyDeathVFX, transform.position, Quaternion.identity);
         deathVFXInstance.transform.parent = parent; // вносим создаваемые объекты под 1 родительский объект в иерархии
         Destroy(gameObject); // уничтожаем вражеский корабль
-        FindObjectOfType<ScoreBoard>().AddToScore();
+        FindObjectOfType<ScoreBoard>().AddToScore(scorePerEnemy);
     }
 }

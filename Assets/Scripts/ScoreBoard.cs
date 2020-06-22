@@ -5,15 +5,15 @@ using UnityEngine.UI;
 
 public class ScoreBoard : MonoBehaviour
 {
-    [SerializeField] int scorePerEnemy = 200;
-
     int currentScore;
+    int scorePerTime = 50;
     Text scoreText;
     // Start is called before the first frame update
     void Start()
     {
         currentScore = 0;
         scoreText = GetComponent<Text>();
+        StartCoroutine(AddScorePerTimeCor());
     }
 
     // Update is called once per frame
@@ -22,8 +22,18 @@ public class ScoreBoard : MonoBehaviour
         scoreText.text = currentScore.ToString();
     }
 
-    public void AddToScore()
+    public void AddToScore(int scoreToAdd)
     {
-        currentScore = currentScore + scorePerEnemy;
+        currentScore = currentScore + scoreToAdd;
+    }
+
+    IEnumerator AddScorePerTimeCor() // добавить счет каждые несколько секунд (указано в WaitForSec)
+    {
+        for(; ; )
+        {
+            AddToScore(scorePerTime);
+            yield return new WaitForSecondsRealtime(1f);
+        }
+        
     }
 }

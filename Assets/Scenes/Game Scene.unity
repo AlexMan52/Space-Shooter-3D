@@ -921,25 +921,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!320 &1708680367
-PlayableDirector:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1708680361}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_PlayableAsset: {fileID: 11400000, guid: 700afe21e6c10364892acd4fed98647a, type: 2}
-  m_InitialState: 1
-  m_WrapMode: 2
-  m_DirectorUpdateMode: 1
-  m_InitialTime: 0
-  m_SceneBindings:
-  - key: {fileID: 8657330414292618410, guid: 700afe21e6c10364892acd4fed98647a, type: 2}
-    value: {fileID: 1708680366}
-  m_ExposedReferences:
-    m_References: []
 --- !u!1001 &1728203464
 PrefabInstance:
   m_ObjectHideFlags: 0

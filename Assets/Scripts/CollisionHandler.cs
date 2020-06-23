@@ -26,6 +26,6 @@ public class CollisionHandler : MonoBehaviour
     {
         gameObject.SendMessage("OnPlayerDeath"); // запуск метода в другом скрипте, который применен к тому же объекту
         //FindObjectOfType<PlayerController>().OnPlayerDeath(); // запуск метода в скрипте PlayerController, но метод должен быть public!
-        FindObjectOfType<RunCamera>().ChangeLiveStatus(); 
+        //FindObjectOfType<RunCamera>().ChangeLiveStatus(); //использовалось когда была камера от Синемашин (до Таймлайнов)
     }
 }

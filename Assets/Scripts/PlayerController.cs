@@ -56,7 +56,7 @@ public class PlayerController : MonoBehaviour
         float rawNewZPos = startPos.z + zOffset; // получаем новую позицию по Y, неограниченную в пространстве
 
         float newXPos = Mathf.Clamp(rawNewXPos, -xRangeToMoveOnScreen, xRangeToMoveOnScreen); // получаем позицию Х, ограниченную границами
-        float newZPos = Mathf.Clamp(rawNewZPos, -zRangeToMoveOnScreen, zRangeToMoveOnScreen); // получаем позицию Y, ограниченную границами
+        float newZPos = Mathf.Clamp(rawNewZPos, -zRangeToMoveOnScreen + 2, zRangeToMoveOnScreen + 2); // получаем позицию Y, ограниченную границами (+2 т.к. объект смещен на -2 по оси z для выставления камеры!)
 
         Vector3 currentPos = new Vector3(newXPos, startPos.y, newZPos); //создаем переменную с новой позицией объекта
         transform.localPosition = currentPos; //двигаем объект на новую позицию

@@ -8,7 +8,7 @@ using UnityEngine.SocialPlatforms.Impl;
 public class Enemy : MonoBehaviour
 {
     [SerializeField] GameObject enemyDeathVFX;
-    [SerializeField] Transform parent;
+    //[SerializeField] Transform parent; //спользовалось для внесения появляющихся врагов под родительский объект, теперь они в Волнах
 
     [SerializeField] int scorePerEnemy = 200;
     [SerializeField] int hitsTillDeath = 1;
@@ -44,7 +44,7 @@ public class Enemy : MonoBehaviour
     private void KillEnemy()
     {
         GameObject deathVFXInstance = Instantiate(enemyDeathVFX, transform.position, Quaternion.identity);
-        deathVFXInstance.transform.parent = parent; // вносим создаваемые объекты под 1 родительский объект в иерархии
+        //deathVFXInstance.transform.parent = parent; // вносим создаваемые объекты под 1 родительский объект в иерархии
         Destroy(gameObject); // уничтожаем вражеский корабль
         FindObjectOfType<ScoreBoard>().AddToScore(scorePerEnemy);
     }

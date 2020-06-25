@@ -104,6 +104,18 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &2075158980
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8814012007159583178}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c30f45e6feca70d419ebab2b6f332499, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &2007763338653592474
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -171,6 +183,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: RotatedShip
       objectReference: {fileID: 0}
+    - target: {fileID: 5584660748390827981, guid: 4d1321f8d12ff4b4f912b3a1bb9f4a6f,
+        type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 0c93209511a4aa840bacdfbfe6940b0d, type: 3}
     - target: {fileID: 5588640664416219874, guid: 4d1321f8d12ff4b4f912b3a1bb9f4a6f,
         type: 3}
       propertyPath: m_LocalPosition.y
@@ -186,6 +203,12 @@ PrefabInstance:
 --- !u!4 &1460127152546273387 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1125455664669504497, guid: 4d1321f8d12ff4b4f912b3a1bb9f4a6f,
+    type: 3}
+  m_PrefabInstance: {fileID: 2007763338653592474}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &8814012007159583178 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7029181301298674256, guid: 4d1321f8d12ff4b4f912b3a1bb9f4a6f,
     type: 3}
   m_PrefabInstance: {fileID: 2007763338653592474}
   m_PrefabAsset: {fileID: 0}

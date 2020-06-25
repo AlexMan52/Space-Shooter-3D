@@ -37,7 +37,6 @@ public class PlayerController : MonoBehaviour
             Movement();
             Rotation();
             PlayShipMovementSFX();
-            PlayShootingSFX();
             deathFX.SetActive(false);
             Shooting();
         }
@@ -88,18 +87,6 @@ public class PlayerController : MonoBehaviour
             GetComponent<AudioSource>().Stop();
         }
     }
-    void PlayShootingSFX()
-    {
-        if (Input.GetMouseButtonDown(0))
-        {
-            GetComponent<AudioSource>().Play();
-        }
-        if (Input.GetMouseButtonUp(0))
-        {
-            GetComponent<AudioSource>().Stop();
-        }
-    }
-
 
     private void DestroyShipBodyParts() // убрать детали корабля, чтоб после взрыва его не было видно
     {
@@ -119,7 +106,7 @@ public class PlayerController : MonoBehaviour
         FindObjectOfType<LevelLoader>().ReloadScene();
     }
 
-    void Shooting() //todo make nice sfx
+    void Shooting()
     {
         foreach (GameObject gun in guns)
         {
@@ -127,12 +114,10 @@ public class PlayerController : MonoBehaviour
             if (Input.GetButton("Fire1"))
             {
                 bulletEmission.enabled = true;
-                //laserSound.PlayOneShot(laserClip);
             }
             else
             {
                 bulletEmission.enabled = false;
-                //laserSound.Stop();
             }
         }
     }

@@ -8,13 +8,13 @@ public class LevelLoader : MonoBehaviour
     void Update()
     {
         StartCoroutine(LoadFromSplashScreen()); //старт корутины загрузка после сплэшскрина с задержкой
-        if (Input.GetKeyDown(KeyCode.L)) // DEBUG
+        /*if (Input.GetKeyDown(KeyCode.L)) // DEBUG
         {
             LoadNextLevel();
-        }
+        }*/
     }
 
-    void LoadNextLevel() // DEBUG
+    /*void LoadNextLevel() // DEBUG
     {
         int currentLevelIndex = SceneManager.GetActiveScene().buildIndex;
         int nextLevelIndex = currentLevelIndex + 1;
@@ -23,7 +23,7 @@ public class LevelLoader : MonoBehaviour
             nextLevelIndex = 0;
         }
         SceneManager.LoadScene(nextLevelIndex);
-    }
+    }*/
 
     IEnumerator LoadFromSplashScreen() //тело корутины закрузки со сплэшскрина
     {
